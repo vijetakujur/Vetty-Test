@@ -1,15 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def index():
-    # Read the content of file4.txt using utf-16-le encoding
-    with open("files/file4.txt", "r", encoding="utf-16-le") as file:
-        file_content = file.read()
+@app.route("/<filename>")
+def index(filename="file1.txt"):
+    try:
+        with open(f"files/{filename}", "r", encoding="utf-8") as file:
+            file_content = file.read()
+    except FileNotFoundError:
+        return "File not found", 404
 
-    # Pass the file content to the HTML template
     return render_template("index.html", content=file_content)
 
 
