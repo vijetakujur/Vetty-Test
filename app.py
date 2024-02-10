@@ -6,9 +6,23 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/<filename>")
 def index(filename="file1.txt"):
+    start_line = request.args.get("start")
+    end_line = request.args.get("end")
+
     try:
         with open(f"files/{filename}", "r", encoding="utf-8") as file:
-            file_content = file.read()
+            lines = file.readlines()
+
+            if start_line is not None and end_line is not None:
+                try:
+                    start_line = int(start_line)
+                    end_line = int(end_line)
+                    file_content = "".join(lines[start_line - 1 : end_line])
+                except ValueError:
+                    return "Invalid start or end line number", 400
+            else:
+                file_content = "".join(lines)
+
     except FileNotFoundError:
         return "File not found", 404
 
