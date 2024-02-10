@@ -27,14 +27,13 @@ python -m venv env
 
 pip install -r requirements.txt
 
-## Usage
-
-1.Run the Flask Application
+5.Run the Flask Application
 
 flask run
 
-2. Open a web browser and navigate to `http://127.0.0.1:5000` to view the application.
-3. You can specify the target file name and optional start/end line numbers in the URL:
+6. Open a web browser and navigate to `http://127.0.0.1:5000` to view the application.
+
+7. You can specify the target file name and optional start/end line numbers in the URL:
 
 - To view a specific file: http://127.0.0.1:5000/filename
 - To specify start and end line numbers: http://127.0.0.1:5000/filename?start=1&end=10
