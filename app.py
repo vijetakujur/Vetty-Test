@@ -25,6 +25,8 @@ def index(filename="file1.txt"):
 
     except FileNotFoundError:
         return "File not found", 404
+    except Exception as e:
+        return f"An error occurred: {str(e)}", 500
 
     return render_template("index.html", content=file_content)
 
