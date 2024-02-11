@@ -4,35 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flask Application</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/index.css')}}"
-    />
+    /> -->
     <style>
       body {
         font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+        margin: 1.5rem;
+        padding: 3px;
         background-color: #f0f0f0;
       }
 
-      .container {
+      /*.container {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+      } */
 
       pre {
-        white-space: pre-wrap; /* Preserve line breaks */
-        word-wrap: break-word; /* Break long words */
+        white-space: pre-wrap;
+        word-wrap: break-word;
         font-family: monospace;
         font-size: 14px;
         line-height: 1.6;
-        margin: 0;
-        padding: 20px;
-        background-color: #f9f9f9;
+        margin: 35px;
+        padding: 35px;
+        background-color: beige;
         border: 1px solid #ddd;
         border-radius: 5px;
         overflow-x: auto;
@@ -40,7 +40,12 @@
     </style>
   </head>
   <body>
-    <pre>{{ content }}</pre>
+    <div>
+      <h1 style="text-align: center">File1.txt</h1>
+    </div>
+    <div>
+      <pre>{{ content }}</pre>
+    </div>
     <!-- <h1>Hello World, this is from the template</h1> -->
   </body>
 </html>
